@@ -3,7 +3,6 @@ import re
 import json
 from pathlib import Path
 
-
 class SantanderParser:
 
     def __init__(self, pdf_path: str):
