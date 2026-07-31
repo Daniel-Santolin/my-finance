@@ -1,3 +1,4 @@
+__pycache__/
 db/*
 entries/*
 parsed-jsons/*
@@ -5,3 +6,4 @@ parsed-jsons/*
 *.db
 *.sqlite
 *.sqlite3
+*.pyc

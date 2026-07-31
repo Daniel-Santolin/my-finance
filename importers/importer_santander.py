@@ -50,7 +50,7 @@ class SantanderImporter:
             (
                 institution,
                 name,
-                type,
+                account_type,
                 card,
                 created_at,
                 updated_at
@@ -96,7 +96,7 @@ class SantanderImporter:
                 (
                     account_id,
                     transaction_category_id,
-                    type,
+                    transaction_type,
                     date,
                     name,
                     alias,

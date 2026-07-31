@@ -1,12 +1,13 @@
-from peewee import Model, AutoField, TextField
 from database import db
 from helpers.date_helper import DateHelper
+from peewee import Model, AutoField, TextField
+
 
 class Account(Model):
     id = AutoField(primary_key=True)
     institution = TextField()
     name = TextField()
-    type = TextField()
+    account_type = TextField()
     card = TextField(null=True)
     created_at = TextField(default=lambda: DateHelper().data_atual_texto())
     updated_at = TextField(default=lambda: DateHelper().data_atual_texto())
