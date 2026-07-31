@@ -1,7 +1,9 @@
 from database import db
+from helpers.date_helper import DateHelper
+from models.account import Account
+from models.transaction_category import TransactionCategory
 from peewee import Model, AutoField, IntegerField, TextField, ForeignKeyField
-from account import Account
-from transaction_category import TransactionCategory
+
 
 class Transaction(Model):
     id = AutoField(primary_key=True)
@@ -12,14 +14,14 @@ class Transaction(Model):
         null=True, 
         backref='transactions'
     )
-    type = TextField()
+    transaction_type = TextField()
     date = TextField()
     name = TextField()
     alias = TextField(null=True)
     value = IntegerField(default=0)
     status = TextField()
-    created_at = TextField()
-    updated_at = TextField()
+    created_at = TextField(default=lambda: DateHelper().data_atual_texto())
+    updated_at = TextField(default=lambda: DateHelper().data_atual_texto())
     deleted_at = TextField(null=True)
 
     class Meta:
